@@ -1,5 +1,5 @@
 {
-  "name": "joyeria-shop",
+  "name": "petroleo-web",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.7"
+    "astro": "^4.5.7",
+    "bootstrap": "^5.3.3"
   }
 }

@@ -1,0 +1,86 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+	img : string;
+}
+
+const { href, title, body,img } = Astro.props;
+
+const backgroundImageUrl = `url(${img})`;
+---
+
+<div class="card-container container" style={{ backgroundImage: backgroundImageUrl }}> 
+	<div class="container-img">
+		
+	</div>
+	<div class="container-texto">
+		<h4>{title}</h4>
+		<p>{body}</p>
+
+		<button>
+			More
+		</button>
+	</div>
+</div>
+
+<style>
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	
+    width: 300px; /* Ancho deseado de la tarjeta */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+	background-image: url();
+	background-size: cover;
+}
+
+.card-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	
+}
+
+.container-img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.container-texto {
+    text-align: center;
+}
+
+.container-texto h4 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+	color: #F20519;
+	text-transform: capitalize;
+}
+
+.container-texto p {
+    margin-top: 10px;
+    color: white;
+}
+
+.container-texto button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #F20519;
+    color: #fff;
+	
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container-texto button:hover {
+    background-color: #8C030E;
+}
+</style>
