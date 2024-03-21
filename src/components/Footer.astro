@@ -1,143 +1,187 @@
 <section class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 container-primeracolumna">
-        <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <h4>We Make Limits</h4>
-        <h4>Unlimited</h4>
-        <p class="segundoP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam suscipit quidem, alias sunt ut quo magnam eos ullam delectus id! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, obcaecati!</p>
-        <div class="row">
-            <div class="col-md-4">
-               <div class="contenedor-img ">
-                <img src="vehicle.svg" class="icon-footer" alt="">
-                <p class="p-icon">Vehicle Float </p>
-                <h5 class="counter" id="counter0"></h5>
-               </div>
-            </div>
-            <div class="col-md-4">
-                <div class="contenedor-img ">
-                    <img src="building.svg" class="icon-footer" alt="">
-                    <p class="p-icon">Lorem lorem </p>
-                    <h5 class="counter" id="counter2"></h5>
-                   </div>
-            </div>
-            <div class="col-md-4">
-                <div class="contenedor-img ">
-                    <img src="helmet.svg" class="icon-footer" alt="">
-                    <p class="p-icon">Lorem Lorem </p>
-                    <h5  class="counter" id="counter3"></h5>
-                   </div>
-            </div>
+  <div class="row">
+    <div class="col-md-6 container-primeracolumna">
+      <p class="text-center">
+        Discover how our passion for innovation and safety drives us to reach
+        new heights in every project we undertake.
+      </p>
+      <h4>We Break Limits</h4>
+      <h4>Unlimited</h4>
+      <p class="segundoP">
+        Discover how our passion for innovation and excellence drives us to push
+        the limits in every aspect of our operation. We are committed to
+        challenging convention and constantly seeking new ways to achieve
+        success. In everything we do, our dedication to quality and creativity
+        drives us to new heights. Join us on our journey into the limitless.!
+      </p>
+      <div class="row contenedor-items">
+        <div class="col-md-4 contenedor-elemento">
+          <div class="contenedor-img">
+            <img src="vehicle.svg" class="icon-footer" alt="" />
+            <p class="p-icon">Available vehicles</p>
+            <h5 class="counter" id="counter0"></h5>
+          </div>
+        </div>
+        <div class="col-md-4 contenedor-elemento">
+          <div class="contenedor-img">
+            <img src="building.svg" class="icon-footer" alt="" />
+            <p class="p-icon">Operational Areas</p>
+            <h5 class="counter" id="counter2"></h5>
+          </div>
+        </div>
+        <div class="col-md-4 contenedor-elemento">
+          <div class="contenedor-img">
+            <img src="helmet.svg" class="icon-footer" alt="" />
+            <p class="p-icon">Workers</p>
+            <h5 class="counter" id="counter3"></h5>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <img src="0303.png" alt="">
-      </div>
     </div>
-  </section>
+    <div class="col-md-6">
+      <img src="0303.png" alt="" />
+    </div>
+  </div>
+</section>
 
-  <script>
+<script>
   // Función para animar el contador
-function animateValue(id, start, end, duration) {
-  var range = end - start;
-  var current = start;
-  var increment = end > start ? 1 : -1;
-  var stepTime = Math.abs(Math.floor(duration / range));
-  var obj = document.getElementById(id);
-  var timer = setInterval(function () {
-    current += increment;
-    obj.textContent = current;
-    if (current == end) {
-      clearInterval(timer);
-    }
-  }, stepTime);
-}
+  function animateValue(id, start, end, duration) {
+    var range = end - start;
+    var current = start;
+    var increment = end > start ? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.getElementById(id);
+    var timer = setInterval(function () {
+      current += increment;
+      obj.textContent = current;
+      if (current == end) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+  }
 
-// Función para manejar la intersección
-function handleIntersection(entries) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateValue("counter2", 0, 120, 3000);
-      animateValue("counter0", 0, 80, 3000);
-      animateValue("counter3", 0, 250, 3000);
-      observer.unobserve(entry.target);
-    }
+  // Función para manejar la intersección
+  function handleIntersection(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateValue("counter2", 0, 120, 3000);
+        animateValue("counter0", 0, 425, 3000);
+        animateValue("counter3", 0, 980, 3000);
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  // Creamos un observador de intersección
+  var observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.5,
   });
-}
 
-// Creamos un observador de intersección
-var observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+  // Obtenemos los elementos a observar
+  var targets = document.querySelectorAll(".counter");
 
-// Obtenemos los elementos a observar
-var targets = document.querySelectorAll(".counter");
-
-// Observamos los elementos
-targets.forEach(target => {
-  observer.observe(target);
-});
-  </script>
+  // Observamos los elementos
+  targets.forEach((target) => {
+    observer.observe(target);
+  });
+</script>
 <style>
-    
-    .p-icon{
-        font-size: 1.8rem;
-    }
-    h5{
-        color: white;
-        font-size: 2.3rem;
-    }
-    /* Estilos personalizados */
-    section {
-  padding: 50px 0; /* Ajustado para que no haya espacio adicional en los lados */
-  height: 20dvh ;
-}
-.contenedor-img{
+  .p-icon {
+    font-size: 1.8rem;
+  }
+  h5 {
+    color: white;
+    font-size: 2.3rem;
+  }
+  /* Estilos personalizados */
+  section {
+    padding: 50px 0; /* Ajustado para que no haya espacio adicional en los lados */
+    height: 20dvh;
+  }
+  .contenedor-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.icon-footer{
+  }
+  .icon-footer {
     height: 60px;
     width: 60px;
-}
-.container-primeracolumna{
-    background-color: #8C030E;
+  }
+
+  .container-primeracolumna {
+    background-color: #8c030e;
     margin: 0;
     padding: 0; /* Elimina el padding */
+  }
+  .container-fluid .row {
+    display: flex;
+    justify-content: center;
 
-}
-.container-fluid .row {
-  display: flex;
-  justify-content: center;
-  
-  margin: 0; /* Elimina el margen */
-}
-.segundoP{
+    margin: 0; /* Elimina el margen */
+  }
+  .segundoP {
     color: gainsboro;
-}
-h4{
+  }
+  h4 {
     text-align: center;
-    color: black;
+    color: white;
     font-weight: bolder;
-    font-size: 2.5em    ;
-}
-p{
+    font-size: 2.5em;
+  }
+  p {
     margin-top: 10px;
     text-align: center;
     text-wrap: balance;
     color: white;
     font-size: 1.2rem;
-}
-.container-fluid .row .col-md-6 {
-  display: flex;
-  flex-direction: column;
-  height: 60dvh;
-  margin: 0; /* Elimina el margen */
-  padding: 0; /* Elimina el padding */  
-}
+  }
+  .container-fluid .row .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    height: 70dvh;
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+  }
 
-img {
-  max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
-  height: 100%; /* Mantiene la proporción de la imagen */
-  object-fit: cover;
-}
-  </style>
+  img {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: 100%; /* Mantiene la proporción de la imagen */
+    object-fit: cover;
+  }
+  @media (max-width: 780px){
+    .p-icon{
+      font-size: 1.5rem;
+    }
+    .icon-footer{
+      height: 50px;
+      width: 50px;
+    }
+    .counter{
+      font-size: 1.4rem;
+    }
+    .container-fluid .row .col-md-6 {
+      height: 100dvh;
+    }
+  }
+  @media (max-width: 576px) {
+    .icon-footer {
+      height: 40px;
+      width: 40px;
+    }
+    .p-icon {
+      font-size: 1.2rem;
+    }
+    .contenedor-items > div {
+      flex: 0 0 50%;
+      max-width: 30%;
+    }
+    .container-fluid .row .col-md-6 {
+      height: 100dvh;
+    }
+    .counter{
+      font-size: 1.2rem;
+    }
+  }
+</style>

@@ -1,17 +1,14 @@
 <section class="mt-5">
   <div class="container">
     <div class="row container contenedor-information">
-      <div class="col-md-6">
-        <img src="balancin.png" alt="" />
+      <div class="col-md-12 col-lg-6">
+        <img src="Comp1.gif" class="balancin" alt="" />
       </div>
 
-      <div class="col-md-6">
-        <h2>Title Balancin</h2>
+      <div class="col-md-12 col-lg-6">
+        <h2>Pumpjack</h2>
         <p class="text-muted parraf-title">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-          voluptas beatae iusto ut culpa quae vero. Mollitia provident, rem
-          explicabo neque, corporis accusantium sapiente, pariatur iste esse
-          molestiae quam accusamus!
+          We understand that each oil operation is unique, which is why we offer personalized services to meet the specific needs of our clients. From installation and commissioning to maintenance and technical support, our highly trained team is available to provide you with the necessary support at every stage of the process.
         </p>
         <div class="container">
           <div class="contenedor-card">
@@ -19,8 +16,9 @@
               <img class="img-icon" src="world.svg" alt="" />
             </div>
             <div class="container contenedor-texto">
-              <h4>World</h4>
-              <p class="p-icon">Lorem ipsum dolor sit amet.</p>
+              <h4>Discovering New Horizons
+              </h4>
+              <p class="p-icon">We explore new horizons in the oil industry worldwide. From exploration to production, we collaborate with local communities and partners for a sustainable energy future.</p>
             </div>
           </div>
           <div class="contenedor-card">
@@ -28,20 +26,26 @@
               <img class="img-icon" src="time.svg" alt="" />
             </div>
             <div class="container contenedor-texto">
-              <h4>Time</h4>
-              <p class="p-icon">Lorem ipsum dolor sit amet.</p>
+              <h4>Time Efficient, Sustainable Results</h4>
+              <p class="p-icon">At our company, we value time as a precious resource. We are committed to maximizing efficiency in all our operations, guaranteeing long-term sustainable results. From planning to execution, every moment is used strategically to drive success and innovation in the oil industry.</p>
             </div>
           </div>
         </div>
-        <div class="container">
-          <button>Get more information →</button>
-        </div>
+       
       </div>
+    </div>
+    <div class="container text-center">
+      <button>Get more information →</button>
     </div>
   </div>
 </section>
 
 <style>
+  .balancin{
+    width: 500px;
+    height: 500px;
+    margin-left: -80px;
+  }
   button {
     background-color: #f20519;
     border: none;
@@ -83,5 +87,36 @@
     font-weight: bold;
     border-bottom: 2px solid #f20519;
     padding-bottom: 15px;
+  }
+  section{
+    background-color: #fcfcff;
+  }
+  @media (min-width: 577px) and (max-width: 768px){
+    .balancin{
+      height: 350px;
+      width: 350px;
+      margin: 0 auto;
+      margin-left: 45px;
+      align-items: center;
+      justify-content: center;
+      
+    }
+  }
+  @media (max-width: 576px){
+    .balancin{
+      height: 200px;
+      width: 200px;
+      margin: 0 auto;
+    }
+   .p-icon{
+    font-size: 0.8rem;
+   }
+   h4{
+    font-size: 1.2rem;
+   }
+   .img-icon{
+    height: 40px;
+    width: 40px;
+   }
   }
 </style>
